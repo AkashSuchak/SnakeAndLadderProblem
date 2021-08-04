@@ -11,7 +11,7 @@ namespace SnakeAndLadder
 
             //Variables
             int start_point = 0;
-            int position = 0;
+            int position = 0, diceNumber = 0;
             int dieNumber, gameOptions;
 
             //Generate Numbers For Die and GameOptions
@@ -19,7 +19,8 @@ namespace SnakeAndLadder
             
             //Loop to get Winning Points reached
             while (position != 100)
-            {               
+            {
+                diceNumber++;
                 // generating Random Numbers for Die and Game Options
                 dieNumber = rand.Next(1, 7);
                 gameOptions = rand.Next(0, 3);
@@ -27,16 +28,16 @@ namespace SnakeAndLadder
                 switch (gameOptions)
                 {
                     case 0:
-                        Console.WriteLine("Position : " + position);
+                        Console.WriteLine("Number : " +diceNumber + " Position : " + position);
                         break;
                     case 1:
                         position += dieNumber;
-                        Console.WriteLine("Position : " + position);
+                        Console.WriteLine("Number : " + diceNumber + " Position : " + position);
                         break;
 
                     case 2:
                         position -= dieNumber;
-                        Console.WriteLine("Position : " + position);
+                        Console.WriteLine("Number : " + diceNumber + " Position : " + position);
                         break;
 
                     default:
@@ -48,8 +49,9 @@ namespace SnakeAndLadder
                 else if (position < 0)
                     position = 0;
             }
-            //Display Position Number
-            Console.WriteLine("You Won ! Reached at : " + position);            
+            //Display Position Number and Numer of Time Dice was Played
+            Console.WriteLine("You Won ! Reached at : " + position);
+            Console.WriteLine("The Number of Times the Dice Was Played : " + diceNumber);
         }
     }
 }
