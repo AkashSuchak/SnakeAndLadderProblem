@@ -42,11 +42,11 @@ namespace SnakeAndLadder
                     default:
                         break;
                 }
-                //Above 100 break and below 0 - restart
-                if (position > 100)                
-                    break;
-                else if (position < 0)                
-                    position = 0;                
+                //Exact winning Position
+                if (position > 100)
+                    position -= dieNumber;
+                else if (position < 0)
+                    position = 0;
             }
             //Display Position Number
             Console.WriteLine("You Won ! Reached at : " + position);            
