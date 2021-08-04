@@ -11,6 +11,11 @@ namespace SnakeAndLadder
 
             //Variable
             int start_point = 0;
+            Random rand = new Random();
+            int dieNumber = rand.Next(1,7);
+
+            //Display Die Number
+            Console.WriteLine("Die Number : " +dieNumber);
         }
     }
 }
